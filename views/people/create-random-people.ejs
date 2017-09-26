@@ -1,0 +1,54 @@
+ 
+<!doctype html>
+<html>
+<head>
+  <title>List of People</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/font-awesome.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+    <style>
+      html,body{
+        overflow-x: hidden; 
+      }
+    </style>
+</head>
+<body>
+  <div class="container-fluid" style="padding:0px;">
+    <div class="container">
+      	<div class="row">
+           	<div class="col-sm-12">
+             	<div>
+             		<h3>Create a new person <span class="pull-right" style="font-size: 15px;"><a href="/random/name/list">Back to list</a></span></h3><hr>
+                <div class="col-sm-8 col-sm-offset-2">
+                  <form action="/random/name/create" method="post">
+                    <div class="form-group">
+                      <label>New Random Name</label>
+                      <input class="form-control" type="text" name="name" value="<%= randomName %>" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label>New Random Country</label>
+                      <input class="form-control" type="text" name="country" value="<%= randomCountry %>" required>
+                    </div>
+                   
+                    <div>
+                      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                      <button type="submit" class="btn btn-warning">Create a new random person</button>
+                    </div>
+                  </form>
+                </div>
+                
+             	</div>
+           	</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

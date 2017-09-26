@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/sarwin-github/random-name-generator#readme",
   "dependencies": {
+    "async": "^2.5.0",
     "body-parser": "^1.18.2",
     "bootstrap": "^3.3.7",
     "connect-flash": "^0.1.1",
