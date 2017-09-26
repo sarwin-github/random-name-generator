@@ -9,7 +9,7 @@ let mongoConnectionLocal = {
 
 // Local connection
 let mongoConnectionOnline = {	
-	'url': `mongodb://${process.env.MongoDBLocalUser}:${process.env.MongoDBLocalPassword}@127.0.0.1:27017/people`
+	'url': `mongodb://${process.env.MLabDBUser}:${process.env.MLabDBPassword}@ds149724.mlab.com:49724/people`
 };
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -24,10 +24,10 @@ module.exports.pickEnv = (env, app) => {
 	        	err => { if(err) { console.log(err); }});
 			break;
 		case 'dev':
-	    	app.set('port', process.env.PORT || 9091);
-	        mongoose.connect(mongoConnectionOnline.url, {auth:{authdb:"admin"}},  
-	        	err => { if(err) { console.log(err); }});
-			break;
+    		app.set('port', process.env.PORT || 9091);
+    	    mongoose.connect(mongoConnectionOnline.url, 
+    	    	err => { if(err) { console.log(err); }}); 
+    	    break;
 	};
 
 	// Set session and cookie max life, store session in mongo database
